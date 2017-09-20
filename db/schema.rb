@@ -55,7 +55,6 @@ ActiveRecord::Schema.define(version: 20170526222926) do
     t.time "time"
     t.integer "seats"
     t.bigint "group_id"
-    t.text "notes"
     t.string "place"
     t.float "longitude"
     t.float "latitude"
@@ -87,6 +86,7 @@ ActiveRecord::Schema.define(version: 20170526222926) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "bio"
     t.string "password_digest"
     t.integer "avatar_id", default: 1
     t.integer "dates_completed", default: 0

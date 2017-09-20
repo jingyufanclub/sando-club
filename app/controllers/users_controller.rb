@@ -13,10 +13,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @group = Group.first
+    @user.email.downcase!
     if @user.save
-      @user.groups << @group
-      redirect_to user_path(@user)
+      session[:user_id] = @user.id
+      @user.groups << Group.first
+      redirect_to @user
     else
       flash.now.notice = "Missing information."
       render :new

@@ -14,7 +14,15 @@
     </h1>
     <ul>
       <% @user.lunchdates.each do |date| %>
-        <li><%= link_to date.show_readable_date, date %><br> <%= date.place %></li>
+        <li>
+          <%= link_to date.show_readable_date, date %><br>
+          at <%= date.place %>
+          with <% if date.has_other_guests? %>
+                <%= date.show_only_guests(@user) %>
+          <% else %>
+            no one yet.
+          <% end %>
+        </li>
       <% end %>
     </ul>
   </section>
