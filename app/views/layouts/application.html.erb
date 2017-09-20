@@ -23,9 +23,7 @@
     <% else %>
       <%= render "layouts/header" %>
       <%= yield %>
-      <% if current_user && request.env['PATH_INFO'] != '/login' && request.env['PATH_INFO'] != '/signup' %>
-        <%= render "layouts/footer" %>
-      <% end %>
+      <%= render "layouts/footer" %>
     <% end %>
   </body>
 </html>

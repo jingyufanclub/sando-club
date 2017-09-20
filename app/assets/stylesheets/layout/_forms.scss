@@ -2,12 +2,15 @@
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  width: 50%;
+  width: 60%;
   margin: auto;
-  text-align: center;
+
+  h1 {
+    text-align: center;
+  }
 }
 
-input, textarea {
+input, textarea, select {
   font-size: 0.8em;
   font-family: $text-font-sans;
   border: 1px solid $baby-blue;
@@ -32,8 +35,9 @@ input[name=commit] {
 
 .button_to {
   input {
-    width: 40%;
+    width: 30%;
     text-transform: uppercase;
+    background-color: $baby-blue;
   }
 }
 
@@ -41,6 +45,25 @@ textarea {
   width: 100%;
   height: 4rem;
   padding: 1ch 0 0 3ch;
+}
+
+select {
+  height: 4ch;
+}
+
+select[id=lunchdate_date_1i] {
+  width: 22%;
+}
+select[id=lunchdate_date_2i] {
+  width: 54%;
+}
+select[id=lunchdate_date_3i] {
+  width: 18%;
+}
+
+.select-dropdown {
+  height: 5ch;
+  width: 100%;
 }
 
 div.field_with_errors {

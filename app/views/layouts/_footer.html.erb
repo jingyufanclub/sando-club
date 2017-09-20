@@ -1,8 +1,11 @@
 <footer class="footer">
-  <div class="nav-links">
-    <%= link_to "home", user_path(current_user) %>&nbsp;&nbsp;&nbsp;
-    <%= link_to "groups", groups_path %>&nbsp;&nbsp;&nbsp;
-    <%= link_to "logout", logout_path, method: :delete %>
-  </div>
+  <% if current_user && request.env['PATH_INFO'] != '/login' && request.env['PATH_INFO'] != '/signup' %>
+    <div class="nav-links">
+      <%= link_to "home", user_path(current_user) %>&nbsp;&nbsp;&nbsp;
+      <%= link_to "groups", groups_path %>&nbsp;&nbsp;&nbsp;
+      <%= link_to "logout", logout_path, method: :delete %>
+    </div>
+  <% end %>
+  <div></div>
   <div class="credits">Made by Jing and Ashley</div>
 </footer>
