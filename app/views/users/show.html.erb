@@ -1,0 +1,40 @@
+<main class="user-page">
+
+  <section class="user-info">
+    <%= image_tag(@user.avatar.src, alt: "avatar") %>
+    <h1>
+      Hello, <%= @user.name %>!<br><br><br>
+      <%= @user.bio %>
+    </h1>
+  </section>
+
+  <section class="user-dates">
+    <h1>
+      Upcoming Lunches:
+    </h1>
+    <ul>
+      <% @user.lunchdates.each do |date| %>
+        <li><%= link_to date.show_readable_date, date %><br> <%= date.place %></li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="user-groups">
+    <h1>
+      Your Groups:
+    </h1>
+    <ul>
+      <% @user.groups.each do |group| %>
+        <li><%= link_to group.name, group %></li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="user-explore">
+    <h1>Let's Do Things</h1>
+    <%= link_to "Make a Lunchdate", new_lunchdate_path, method: :get %><br>
+    <%= link_to "Explore Groups", groups_path, method: :get %><br>
+    <%= link_to "Create New Group", new_group_path, method: :get %><br>
+  </section>
+
+</main>

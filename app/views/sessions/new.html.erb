@@ -1,0 +1,11 @@
+<section class="login form">
+    <h1>Log In</h1>
+    <%= form_with scope: :user, url: login_path, local: true do |f| %>
+      <%= f.text_field :email, id: :login_email, autofocus: true, placeholder: 'Email', label: false %><br><br>
+      <%= f.password_field :password, id: :password, placeholder: 'Password' %><br><br>
+      <%= submit_tag "Log In"%>
+    <% end %>
+    <% if flash[:notice] %>
+      <p><%= flash[:notice] %></p>
+    <% end %>
+</section>

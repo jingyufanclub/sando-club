@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-image: url('sandoclubcard-landscape-1440.jpg');
+  background-size: cover;
+  color: rgba(0, 49, 83,1);
+  font-family: 'Luckiest Guy', 'Comic Sans MS', 'Arial Black', cursive;
+  overflow: hidden;
+}
+
+a:link, a:hover, a:visited {
+  color: rgba(177,212,224,1);
+  text-decoration: underline wavy;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 0.3fr 1fr;
+  justify-items: center;
+  width: 90vw;
+  height: 100vh;
+  margin: auto;
+  visibility: hidden;
+}
+
+.tagline {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  align-self: end;
+}
+
+h1#club-tagline {
+  font-size: 10vw;
+  letter-spacing: 1vw;
+  line-height: 0.5em;
+}
+
+.cta {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  font-size: 4vw;
+  display: inline-flex;
+}
+
+.mascot {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+#mascot {
+  height: 20vh;
+}
+
+@media only screen
+  and (max-device-width: 1024px)
+  and (orientation: portrait) {
+    background-image: url('sandoclubcard-portrait.jpg');
+    background-size: cover;
+}
+
+@media
+(-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi){
+    background-image: url('sandoclubcard-landscape-2880.jpg');
+}

@@ -1,0 +1,60 @@
+.form {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+input, textarea {
+  font-size: 0.8em;
+  font-family: $text-font-sans;
+  border: 1px solid $baby-blue;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  height: 5ch;
+  padding-left: 3ch;
+}
+
+input[type=number] {
+  width: 5ch;
+}
+
+input[name=commit] {
+  width: 100%;
+  height: 4ch;
+  background-color: $baby-blue;
+  -webkit-appearance: button;
+}
+
+.button_to {
+  input {
+    width: 40%;
+    text-transform: uppercase;
+  }
+}
+
+textarea {
+  width: 100%;
+  height: 4rem;
+  padding: 1ch 0 0 3ch;
+}
+
+div.field_with_errors {
+  display: inline;
+}
+
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+
+::-moz-placeholder {
+  font-style: italic;
+}
+
+:-ms-input-placeholder {
+  font-style: italic;
+}

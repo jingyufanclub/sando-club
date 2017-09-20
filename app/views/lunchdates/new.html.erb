@@ -1,0 +1,8 @@
+<section class='lunchdates form'>
+  <h1>Let's Make a Date!</h1>
+  <%= render 'form' %>
+  <br><br>
+  <% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+  <% end %>
+</section>

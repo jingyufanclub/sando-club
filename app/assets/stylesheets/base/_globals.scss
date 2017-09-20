@@ -1,0 +1,41 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  &:hover, &:focus, &:active {
+    color: $link-hover-color;
+    text-decoration: underline;
+    text-decoration-skip: ink;
+  }
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+li {
+  padding-left: 1em;
+  text-indent: -1em;
+  &:before {
+      content: "❥";
+      padding-right: 0.4em;
+  }
+}
+
+::-moz-selection {
+  background: $peach;
+  color: $white;
+}
+::selection {
+  background: $peach;
+  color: $white;
+}

@@ -1,0 +1,36 @@
+<main class="group-page">
+  <header class="group-header">
+    <h1>
+      <%= @group.name %> — <%= @group.description %>
+    </h1>
+  </header>
+
+  <section class="group-members">
+    <h1>
+      Members:
+    </h1>
+
+    <ul>
+      <% @group.users.each do |user| %>
+        <li><%= link_to user.name, user %></li>
+      <% end %>
+    </ul>
+
+    <% if !is_user_in_group?(@user, @group) %>
+      <%= button_to "Join This Group", @group, method: :patch %>
+    <% end %>
+  </section>
+
+  <section class="group-lunches">
+    <h1>
+      Lunches:
+    </h1>
+
+    <ul>
+      <% @group.lunchdates.each do |date| %>
+        <li><%= link_to date.place, date %></li>
+      <% end %>
+    </ul>
+  </section>
+
+</main>

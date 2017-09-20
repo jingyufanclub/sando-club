@@ -1,0 +1,32 @@
+.group-page {
+  display: grid;
+  grid-gap: 5%;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "group-header"
+    "group-members"
+    "group-lunches";
+  width: 100%;
+  margin: auto;
+
+  @media screen and (min-width: 730px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "group-header group-header"
+    "group-members group-lunches";
+  }
+}
+
+.group-header {
+	grid-area: group-header;
+}
+.group-members {
+	grid-area: group-members;
+}
+.group-lunches {
+	grid-area: group-lunches;
+}
+
+header.group-header h1 {
+  font-style: italic;
+}

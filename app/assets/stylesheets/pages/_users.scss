@@ -1,0 +1,38 @@
+.user-page {
+  display: grid;
+  grid-gap: 5%;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "user-info"
+    "user-dates"
+    "user-groups"
+    "user-explore";
+  width: 100%;
+  margin: auto;
+}
+
+@media screen and (min-width: 730px) {
+  .user-page {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "user-info user-dates"
+    "user-groups user-explore";
+  }
+}
+
+.user-info {
+	grid-area: user-info;
+}
+.user-dates {
+	grid-area: user-dates;
+}
+.user-groups {
+	grid-area: user-groups;
+}
+.user-explore {
+	grid-area: user-explore;
+}
+
+img[alt='avatar'] {
+  width: 20vw;
+}

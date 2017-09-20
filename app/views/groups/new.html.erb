@@ -1,0 +1,8 @@
+<section class="groups form">
+  <h1>Create a New Group</h1>
+  <%= render "form" %>
+  <br><br>
+  <% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+  <% end %>
+</section>

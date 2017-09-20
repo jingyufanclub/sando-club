@@ -1,0 +1,14 @@
+<h1>
+  Lunch is served on <%= @lunchdate.show_readable_date %><br>
+  at <%= @lunchdate.show_readable_time %><br>
+  at <%= @lunchdate.place %><br><br>
+  Who's going to lunch?
+  <ul>
+    <% @lunchdate.users.each do |u| %>
+      <li><%= u.name %></li>
+    <% end %>
+  </ul>
+  <% if is_user_in_group?(@user, @lunchdate.group) && !is_user_going_on_date?(@user, @lunchdate)  %>
+    <%= button_to "Let's Do Lunch!", @lunchdate, method: :patch %>
+  <% end %>
+</h1>

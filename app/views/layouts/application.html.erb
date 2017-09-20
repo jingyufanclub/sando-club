@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sando Club</title>
+    <meta name="description" content="Sando Club">
+    <%= render 'application/favicon' %>
+    <%= csrf_meta_tags %>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJalaLkIb7bPxxP4xi-F6gcfrC2qIKFHg&libraries=places" ></script>
+    <% if controller_name == "static" && action_name == "index" %>
+      <%= stylesheet_link_tag 'welcome' %>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" async defer></script>
+      <%= javascript_include_tag 'welcome' %>
+    <% else %>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% end %>
+  </head>
+
+  <body>
+    <% if controller_name == "static" && action_name == "index" %>
+      <%= yield %>
+    <% else %>
+      <%= render "layouts/header" %>
+      <%= yield %>
+      <% if current_user && request.env['PATH_INFO'] != '/login' && request.env['PATH_INFO'] != '/signup' %>
+        <%= render "layouts/footer" %>
+      <% end %>
+    <% end %>
+  </body>
+</html>
