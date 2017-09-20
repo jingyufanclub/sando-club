@@ -3,14 +3,14 @@
   <section class="user-info">
     <%= image_tag(@user.avatar.src, alt: "avatar") %>
     <h1>
-      Hello, <%= @user.name %>!<br><br><br>
-      <%= @user.bio %>
+      Hello, <%= @user.name %>!<br>
     </h1>
+    <p><em><%= @user.bio %></em></p>
   </section>
 
   <section class="user-dates">
     <h1>
-      Upcoming Lunches:
+      Upcoming Lunches
     </h1>
     <ul>
       <% @user.lunchdates.each do |date| %>
@@ -29,7 +29,7 @@
 
   <section class="user-groups">
     <h1>
-      Your Groups:
+      Member of
     </h1>
     <ul>
       <% @user.groups.each do |group| %>
