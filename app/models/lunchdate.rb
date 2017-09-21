@@ -16,13 +16,18 @@ class Lunchdate < ApplicationRecord
     time.strftime("%l:%M%p")
   end
 
+  def show_guests(current_user)
+    if has_guests?
+      guests = users.select { |user| user != current_user  }
+      guest_names = guests.map { |guest| guest.name }
+      guest_names.to_sentence
+    else
+      "no one yet"
+    end
+  end
+
   def has_guests?
     users.size > 1
   end
 
-  def show_guests(current_user)
-    guests = users.select { |user| user != current_user  }
-    guest_names = guests.map { |guest| guest.name }
-    guest_names.to_sentence
-  end
 end

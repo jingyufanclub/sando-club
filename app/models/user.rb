@@ -13,4 +13,8 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
 
+  def sort_lunchdates
+    lunchdates.order("date ASC")
+  end
+
 end

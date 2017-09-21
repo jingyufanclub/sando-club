@@ -13,15 +13,11 @@
       Upcoming Lunches
     </h1>
     <ul>
-      <% @user.lunchdates.each do |date| %>
+      <% @user.sort_lunchdates.each do |date| %>
         <li>
           <%= link_to date.show_readable_date, date %><br>
           at <%= date.place %>
-          with <% if date.has_guests? %>
-                <%= date.show_guests(@user) %>
-          <% else %>
-            no one yet.
-          <% end %>
+          with <%= date.show_guests(@user) %>.
         </li>
       <% end %>
     </ul>

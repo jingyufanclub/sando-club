@@ -27,7 +27,7 @@
     </h1>
 
     <ul>
-      <% @group.lunchdates.each do |date| %>
+      <% @group.sort_lunchdates.each do |date| %>
         <li><%= link_to date.place, date %></li>
       <% end %>
     </ul>
