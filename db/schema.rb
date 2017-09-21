@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20170526222926) do
   create_table "eaters", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "lunchdate_id"
+    t.boolean "host", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lunchdate_id"], name: "index_eaters_on_lunchdate_id"
@@ -67,6 +68,7 @@ ActiveRecord::Schema.define(version: 20170526222926) do
   create_table "memberships", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "group_id"
+    t.boolean "owner", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_memberships_on_group_id"
