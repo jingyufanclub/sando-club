@@ -7,7 +7,7 @@
 </script>
 
 <%= form_with model: @lunchdate, local: true do |f|%>
-  <%= f.date_select :date %><br><br>
+  <%= f.date_field :date, value: Date.current, min: Date.current %><br><br>
   <%= f.time_select :time, {start_hour: 11, end_hour: 15, ampm: true, minute_step: 15} %><br><br>
   <%= f.text_field :place, id: "place", placeholder: "Search for sandwiches" %><br><br>
   <%= f.select :group_id, @groups.map {|g| [g.name, g.id]}, {}, {class: "select-dropdown"} %><br><br>

@@ -13,10 +13,15 @@
 input, textarea, select {
   font-size: 0.8em;
   font-family: $text-font-sans;
-  border: 1px solid $baby-blue;
+  border: 1px solid $input-border-color;
 }
 
-input[type=text], input[type=password] {
+input:focus, textarea:focus, select:focus {
+  border: 0;
+  outline: 4px dotted $input-focus-color;
+}
+
+input[type=text], input[type=date], input[type=email], input[type=password] {
   width: 100%;
   height: 5ch;
   padding-left: 3ch;
@@ -29,7 +34,7 @@ input[type=number] {
 input[name=commit] {
   width: 100%;
   height: 4ch;
-  background-color: $baby-blue;
+  background-color: $form-button-color;
   -webkit-appearance: button;
 }
 
@@ -37,7 +42,7 @@ input[name=commit] {
   input {
     width: 30%;
     text-transform: uppercase;
-    background-color: $baby-blue;
+    background-color: $form-button-color;
   }
 }
 
@@ -51,21 +56,12 @@ select {
   height: 4ch;
 }
 
-select[id=lunchdate_date_1i] {
-  width: 22%;
-}
-select[id=lunchdate_date_2i] {
-  width: 54%;
-}
-select[id=lunchdate_date_3i] {
-  width: 18%;
-}
 
 select[id=lunchdate_time_4i] {
-  width: 22%;
+  width: 30%;
 }
 select[id=lunchdate_time_5i] {
-  width: 18%;
+  width: 20%;
 }
 
 .select-dropdown {
