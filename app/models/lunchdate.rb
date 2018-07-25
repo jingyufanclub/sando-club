@@ -1,5 +1,3 @@
-require 'pry'
-
 class Lunchdate < ApplicationRecord
   has_many :eaters
   has_many :users, through: :eaters
