@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background-image: asset-url('sandoclubcard-landscape-1440.jpg');
+  background-image: image-url('sandoclubcard-landscape-1440.jpg');
   background-size: cover;
   color: rgba(0, 49, 83,1);
   font-family: 'Luckiest Guy', 'Comic Sans MS', 'Arial Black', cursive;
@@ -64,12 +64,12 @@ h1#club-tagline {
 @media only screen
   and (max-device-width: 1024px)
   and (orientation: portrait) {
-    background-image: asset-url('sandoclubcard-portrait.jpg');
+    background-image: image-url('sandoclubcard-portrait.jpg');
     background-size: cover;
 }
 
 @media
 (-webkit-min-device-pixel-ratio: 1.5),
 (min-resolution: 144dpi){
-    background-image: asset-url('sandoclubcard-landscape-2880.jpg');
+    background-image: image-url('sandoclubcard-landscape-2880.jpg');
 }
