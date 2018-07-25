@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :email
       t.string :bio
       t.string :password_digest
-      t.integer :avatar_id, default: 1
+      t.integer :avatar_id
       t.integer :dates_completed, default: 0
       t.boolean :admin, default: false
 

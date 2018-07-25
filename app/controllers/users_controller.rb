@@ -31,6 +31,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :bio, :password, :password_confirmation)
+    defaults = { avatar_id: rand(1..2)}
+    params.require(:user).permit(:name, :email, :bio, :password, :password_confirmation, :avatar_id).reverse_merge(defaults)
   end
 end
