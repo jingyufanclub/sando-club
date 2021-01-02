@@ -34,6 +34,8 @@ gem 'bcrypt', '~> 3.1.7'
 # Prettify urls
 gem 'friendly_id', '5.1.0'
 
+gem "nokogiri", ">= 1.11.0.rc4"
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
